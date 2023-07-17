@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+
+<body>
+<table id="cars">
+    <style type="text/css">
+        TABLE {
+            width: 300px; /* Ширина таблицы */
+            border-collapse: collapse; /* Убираем двойные линии между ячейками */
+        }
+        TD, TH {
+            text-align: center;
+            vertical-align: center;
+            padding: 3px; /* Поля вокруг содержимого таблицы */
+            border: 1px solid black; /* Параметры рамки */
+        }
+        TH {
+            background: #9d81ba; /* Цвет фона */
+        }
+    </style>
+
+    <thead>
+    <tr>
+        <th th:text="CARS" colspan="3"> CARS </th>
+    </tr>
+    <tr>
+        <th th:text="MODEL"> Model </th>
+        <th th:text="COLOR"> Color </th>
+        <th th:text="PRICE"> Price </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="car : ${cars}">
+        <td th:text="${car.model}"></td>
+        <td th:text="${car.color}"></td>
+        <td th:text="${car.price}"></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
